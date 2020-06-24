@@ -6,7 +6,9 @@
 #include <unistd.h>
 
 #define MAXSIZE 1024
-
+/*
+*	用系统IO的open()、read()、write()、close()完成文件的复制
+*/
 int main()
 {	
 	int sfd,dfd;
