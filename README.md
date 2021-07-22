@@ -7,3 +7,6 @@ print_ints.c
 
 response_generator.c
 一个分手信自动生成器，用到了函数指针
+
+compare.c
+一个用来演示qsort的文件
