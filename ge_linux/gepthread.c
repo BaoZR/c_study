@@ -5,6 +5,9 @@
 #include <string.h>
 #include <stdatomic.h>
 
+//来自第五课 大道并行：创建和管理线程
+//体验三种情况，无锁，mutex锁，atomic锁，加一的情况
+//注意要在多于一个cpu的情况下运行
 
 char msg_brd[100];
 
