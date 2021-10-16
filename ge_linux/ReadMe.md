@@ -1,1 +1,2 @@
-gepthread.c 体验线程锁
+gepthread.c 
+体验线程锁的例子
