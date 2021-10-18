@@ -1,0 +1,59 @@
+//用来练习静态库和动态库
+
+#include "wcr_splitter.h"
+
+const char* WCR_SEPARATORS = " \t\r\n;+,.";
+const int WCS_WORD_MAX = 50;
+
+int wcr_is_separator(const char c)
+{
+	return(strchr(WCR_SEPARATORS,c) != NULL);
+}
+
+int wcr_feed_word(const char * word_start, int word_length)
+{
+	char word[WCS_WORD_MAX];
+	int len;
+
+	len = (word_length > sizeof(word) - 1)?sizeof(word) - 1:word_length;
+	memcpy(word,word_start,len);
+	word[len] = 0;
+	
+	//TODO add the word to vector
+	
+	printf("wcr word:%s\n",word);
+
+	return 0;
+}
+
+
+int wcr_split(const char* texts,size_t length)
+{
+	size_t i;
+	int word_length = 0;
+	const char* cursor = texts;
+	char c;
+
+	length = (length <= 0)?strlen(texts):length;
+	for(i = 0; i < length; i++)
+	{
+		c = texts[i];
+		if(wcr_is_separator(c))
+		{
+			if(word_length > 0)
+			{
+				wcr_feed_word(cursor, word_length);
+				cursor += word_length + 1;
+				word_length = 0;
+			}else{
+				cursor++;
+			}
+		}else{
+			word_length++;
+		}
+	}
+	
+	return 0;
+}
+
+
