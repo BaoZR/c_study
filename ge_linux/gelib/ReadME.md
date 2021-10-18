@@ -16,11 +16,12 @@ gcc -g3 -o testlib testlib.c wcr_splitter.a
 生成动态库
 gcc -fPIC -shared -o libwcr_splitter.so wcr_splitter.c
 
-ld搜索so的顺序 
-构建时指定的位置->LD_LIBRARY_PATH变量定义的位置->/etc/ld.so.cache定义的位置*->默认位置/lib和usr/lib(/lib64和/usr/lib64)
-5种动态库的使用方法
-
 构建时使用动态库
 
 gcc -g3 -o testdlib testlib.c -L. -lwcr_splitter
 -L 指定搜索so的路径 -l 指定要链接的so,lib前缀可以省略
+
+ld搜索so的顺序 
+构建时指定的位置->LD_LIBRARY_PATH变量定义的位置->/etc/ld.so.cache定义的位置*->默认位置/lib和usr/lib(/lib64和/usr/lib64)
+
+5种动态库的使用方法
