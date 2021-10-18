@@ -25,3 +25,13 @@ ld搜索so的顺序
 构建时指定的位置->LD_LIBRARY_PATH变量定义的位置->/etc/ld.so.cache定义的位置*->默认位置/lib和usr/lib(/lib64和/usr/lib64)
 
 5种动态库的使用方法
+
+1.sudo cp libwcr_splitter.so /usr/lib •使用默认位置
+
+2.构建时使用rpath指定
+
+3.临时指定LD_LIBRARY_PATH
+
+4.通过bashrc脚本修改LD_LIBRARY_PATH
+
+5.向ld.so.conf.d目录放入文件
