@@ -1,6 +1,7 @@
 用来练习静态库和动态库
 
 生成静态库 
+
 1.gcc -c wcr_splitter.c
 -c告诉gcc只编译，不链接
 
@@ -12,6 +13,8 @@ s -为目标文件创建索引
 使用静态库
 gcc -g3 -o testlib testlib.c wcr_splitter.a
 想提供.c那样提供给gcc就行了
+
+===================================================================================================================
 
 生成动态库
 gcc -fPIC -shared -o libwcr_splitter.so wcr_splitter.c
